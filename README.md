@@ -1,8 +1,8 @@
 # Group 2 MOAD-320 Assignment
 ## Introduction
 You are called by the Ministry of Tourism to develop mobile app for touring
-around cities of Malawi. This mobile app will help users to prominent tourist
-destinations.
+around cities of Malawi. This mobile app will help users to know prominent 
+tourist destinations.
 
 ## App Description
 The app introduces the basic information about Malawian cities to the user. You may
