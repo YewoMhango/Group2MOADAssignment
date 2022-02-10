@@ -21,10 +21,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
+            android:id="@+id/fragmentContainerView1"
             android:name="com.example.group2moadassignment.CitiesListFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="50"/>
+            android:layout_weight="10"/>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView2"
+            android:name="com.example.group2moadassignment.CitiesListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
