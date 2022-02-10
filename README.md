@@ -1,4 +1,4 @@
-# Group2 MOAD-320 Assignment
+# Group 2 MOAD-320 Assignment
 ## Introduction
 You are called by the Ministry of Tourism to develop mobile app for touring
 around cities of Malawi. This mobile app will help users to prominent tourist
