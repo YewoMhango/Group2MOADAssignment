@@ -5,29 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
- * A simple [Fragment] subclass.
- * Use the [CityFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * A simple [Fragment] subclass representing a view of the details of a particular city
  */
 class CityFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var city: City = City.Lilongwe
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,23 +23,117 @@ class CityFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_city, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CityFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CityFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        this.render()
+        // It's necessary to call this.render in onViewCreated 
+        // because the changeToCity function gets called before
+        // the onCreateView, so the changes made by this.render
+        // in changeToCity get overwritten
+    }
+
+    /**
+     * Change the content displayed in the fragment to match the specified city
+     */
+    fun changeCityTo(city: City) {
+        this.city = city
+        this.render()
+    }
+
+    /**
+     * This sets the content displayed in the fragment's view based on the value of [city]
+     */
+    private fun render() {
+        this.view?.findViewById<ImageView>(R.id.mainImage)
+            ?.setImageResource(getImageResource())
+
+        this.view?.findViewById<ImageView>(R.id.mainImage)
+            ?.contentDescription = getCityName()
+
+        this.view?.findViewById<TextView>(R.id.cityName)
+            ?.text = getCityName()
+
+        this.view?.findViewById<TextView>(R.id.cityDescription)
+            ?.text = getCityDescription()
+
+        this.view?.findViewById<TextView>(R.id.mustSeeAndDo)
+            ?.text = getCityMustSeeAndDo()
+
+        this.view?.findViewById<ImageView>(R.id.mapImage)
+            ?.setImageResource(getMapResource())
+
+        this.view?.findViewById<ImageView>(R.id.mapImage)
+            ?.contentDescription = getCityMapDescription()
+    }
+
+    /**
+     * Returns an image resource for the current city
+     */
+    private fun getImageResource(): Int {
+        return when(this.city) {
+            City.Zomba -> R.drawable.zomba_chancellor_college
+            City.Lilongwe -> R.drawable.lilongwe_large
+            City.Blantyre -> R.drawable.blantyre_large
+            City.Mzuzu -> R.drawable.mzuzu_rbm
+        }
+    }
+    
+    /**
+     * Returns the name of the current city
+     */
+    private fun getCityName(): String {
+        return getString(when(this.city) {
+            City.Zomba -> R.string.zomba_name
+            City.Lilongwe -> R.string.lilongwe_name
+            City.Blantyre -> R.string.blantyre_name
+            City.Mzuzu -> R.string.mzuzu_name
+        })
+    }
+
+    /**
+     * Returns a description of the current city
+     */
+    private fun getCityDescription(): String {
+        return getString(when(this.city) {
+            City.Zomba -> R.string.zomba_description
+            City.Lilongwe -> R.string.lilongwe_description
+            City.Blantyre -> R.string.blantyre_description
+            City.Mzuzu -> R.string.mzuzu_description
+        })
+    }
+
+    /**
+     * Returns a description of the "Must See and Do" for the current city
+     */
+    private fun getCityMustSeeAndDo(): String {
+        return getString(when(this.city) {
+            City.Zomba -> R.string.zomba_must_see_and_do
+            City.Lilongwe -> R.string.lilongwe_must_see_and_do
+            City.Blantyre -> R.string.blantyre_must_see_and_do
+            City.Mzuzu -> R.string.mzuzu_must_see_and_do
+        })
+    }
+
+    /**
+     * Returns an image resource of the map for the current city
+     */
+    private fun getMapResource(): Int {
+        return when(this.city) {
+            City.Zomba -> R.drawable.zomba_map
+            City.Lilongwe -> R.drawable.lilongwe_map
+            City.Blantyre -> R.drawable.blantyre_map
+            City.Mzuzu -> R.drawable.mzuzu_map
+        }
+    }
+
+    /**
+     * Returns a description of the map for the current city
+     */
+    private fun getCityMapDescription(): String {
+        return getString(when(this.city) {
+            City.Zomba -> R.string.zomba_map
+            City.Lilongwe -> R.string.lilongwe_map
+            City.Blantyre -> R.string.blantyre_map
+            City.Mzuzu -> R.string.mzuzu_map
+        })
     }
 }

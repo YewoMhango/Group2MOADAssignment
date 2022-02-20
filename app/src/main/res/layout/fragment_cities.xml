@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="4">
+
+    <Button
+        android:id="@+id/button_lilongwe"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/lilongwe_name"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button_blantyre"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/blantyre_name"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button_mzuzu"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/mzuzu_name"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button_zomba"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/zomba_name"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp" />
+</LinearLayout>
