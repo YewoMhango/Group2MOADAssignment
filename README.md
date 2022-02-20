@@ -20,4 +20,8 @@ The mobile app should meet the following design requirements:
 4. Use bundle objects to save state data to preserve the current UI state at orientation change.
 
 # Screenshots
-![Screenshot 1](/screenshots/1.png) ![Screenshot 2](/screenshots/2.png) ![Screenshot 3](/screenshots/3.png)
+![Screenshot 1](/screenshots/1.png) 
+
+![Screenshot 2](/screenshots/2.png) 
+
+![Screenshot 3](/screenshots/3.png)
